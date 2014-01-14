@@ -179,6 +179,7 @@ class Selection(FancyValidator):
 
 class Reference(FancyValidator):
     if_empty = False
+    accept_iterator = True
 
     def _to_python(self, value, state):
 
