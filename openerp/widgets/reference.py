@@ -63,5 +63,8 @@ class Reference(TinyInputWidget):
             self.default = ''
             self.text = ''
 
+    def get_value(self):
+        return '{0},{1}'.format(self.relation, self.default)
+
 # vim: ts=4 sts=4 sw=4 si et
 
