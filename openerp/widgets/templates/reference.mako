@@ -4,7 +4,7 @@
             <td width="30%">
                 <input type="hidden" id='${name}' name='${name}' class="${css_class}"
                     ${py.attrs(attrs, kind=kind, domain=domain, context=ctx, relation=relation, value=value)}/>
-                <select id="${name}_reference" name='${name}'>
+                <select id="${name}_reference" name='${name}' ${'disabled="disabled"' if readonly else ''}>
                     <option value=""></option>
                     % for (k, v) in options:
                         % if relation == k:
