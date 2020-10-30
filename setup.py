@@ -116,12 +116,14 @@ setup(
     license = license,
 
     install_requires=[
-        "CherryPy >= 3.1.2",
-        "Mako >= 0.2.4",
-        "Babel >= 0.9.4",
-        "FormEncode >= 1.2.2",
-        "simplejson >= 2.0.9",
-        "pyparsing >= 1.5.0"
+        "CherryPy == 5.1.0",
+        "Mako >= 1.0.4",
+        "Babel == 2.2.0",
+        "FormEncode == 1.3.0",
+        "simplejson == 3.8.2",
+        "pyparsing == 2.1.0",
+        "MarkupSafe==0.23"
+
     ],
 
     zip_safe = False,
