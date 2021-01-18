@@ -648,6 +648,10 @@ class Form(SecuredController):
             res = form.get(params.field)
             return base64.decodestring(res)
 
+        if len(params.model) > 1:
+            params.model = params.model[0]
+        if len(params.id) > 1:
+            params.id = params.id[0]
         proxy = rpc.RPCProxy(params.model)
         res = proxy.read([params.id],[params.field], rpc.session.context)
 
