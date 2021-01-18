@@ -35,6 +35,20 @@ import tiny_socket
 
 from openerp import common
 
+try:
+    # Due: https://www.python.org/dev/peps/pep-0476
+    import ssl
+    try:
+        _create_unverified_https_context = ssl._create_unverified_context
+    except AttributeError:
+        # Legacy Python that doesn't verify HTTPS certificates by default
+        pass
+    else:
+        # Handle target environment that doesn't support HTTPS verification
+        ssl._create_default_https_context = _create_unverified_https_context
+except ImportError:
+    pass
+
 
 class RPCException(Exception):
     """A common exeption class for RPC errors.
