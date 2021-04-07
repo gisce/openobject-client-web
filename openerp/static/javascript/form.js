@@ -915,16 +915,19 @@ function do_action(action_id, field, relation, src, data) {
 
         params['_terp_selection'] = '[' + ids.join(',') + ']';
         var id = eval(params['_terp_selection'])[0]
+        var active_ids = eval(params['_terp_selection'])
     }
 	else{
-    	var id = $(field).value;}
+        var id = $(field).value;
+        var active_ids = '[' + id + ']';
+	}
     	
     var domain = getNodeAttribute(src, 'domain');
     var context = getNodeAttribute(src, 'context');
     
     var req = eval_domain_context_request({source: $(field).id,
                                            active_id: id,
-                                           active_ids: params['_terp_selection'],
+                                           active_ids: active_ids,
                                            domain: domain, 
                                            context: context});
                                            
