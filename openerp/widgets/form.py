@@ -298,7 +298,7 @@ class Label(TinyInputWidget):
 
     template = """
     <div style="text-align: ${align}; width: 100%;">
-        ${field_value}
+        ${field_value | n}
     </div>"""
 
     params = ["field_value", "align"]
