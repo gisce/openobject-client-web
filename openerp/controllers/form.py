@@ -915,6 +915,8 @@ class Form(SecuredController):
 
         if data.get('datas'):
             action = eval(data.get('datas'))
+            if not context and 'context' in action:
+                context = eval(action['context'])
         type = action.get('type')
         act_id = params.action
 
