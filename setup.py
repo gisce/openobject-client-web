@@ -118,7 +118,7 @@ setup(
     install_requires=[
         "CherryPy == 5.1.0",
         "Mako >= 1.0.4",
-        "Babel == 2.2.0",
+        "Babel == 2.9.1",
         "FormEncode == 1.3.0",
         "simplejson == 3.8.2",
         "pyparsing == 2.1.0",
